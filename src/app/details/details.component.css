@@ -1,20 +1,28 @@
 .whole{
-    background-image: url(../../assets/thumb-1920-1102284.jpg);
-    height: calc(100vh - 92px);
    
+    
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: center;
+        background-image: url(../../assets/thumb-1920-1102284.jpg);
+        height: calc(100vh - 92px);
+    }
     /* position: absolute; */
     /* align-items: center; */
 
     
-}
+
 
 .details{
+    /* align-self: auto; */
     background-color: white;
-    height: 500px;
+    width: 500px;
+    /* height: 500px;
     width: 500px;
     /* text-align: center; */
     
-    position: relative; top: 50px; left: 400px;
+    /* position: relative; top: 50px; left: 400px;  */
     
     /* position: relative; */
     /* top: 100px; */

@@ -18,14 +18,24 @@ export class WizardListComponent implements OnInit {
     this.dataservice.getWizard().subscribe(
      (response:any) => { 
        this.data = response
-       console.log(response);
-        this.data.forEach((element: any) => {
-         this.data_of_single_wizard=element;
-        });
+      // console.log(response);
+       
+        // this.data.forEach((element: any) => {
+        //  this.data_of_single_wizard=element;
+        // });
      } 
     );
    
    //array1.forEach(element => console.log(element));
 
 }
+
+onClick(character:any) {
+  console.log(character);
+  this.data_of_single_wizard=character;
+  return character;
+  }
+
+
+
 }
