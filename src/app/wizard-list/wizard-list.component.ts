@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -11,31 +12,26 @@ export class WizardListComponent implements OnInit {
   data_of_single_wizard:string="";
 
  constructor(
-    private dataservice: DataService
+    private dataservice: DataService,
+    private router: Router
   ) { }  
 
  ngOnInit(): void {
     this.dataservice.getWizard().subscribe(
      (response:any) => { 
-       this.data = response
-      // console.log(response);
-       
-        // this.data.forEach((element: any) => {
-        //  this.data_of_single_wizard=element;
-        // });
+       this.data = response 
      } 
     );
    
-   //array1.forEach(element => console.log(element));
+   
 
 }
 
 onClick(character:any) {
-  console.log(character);
-  this.data_of_single_wizard=character;
-  return character;
+  //this.data_of_single_wizard=character;
+  this.dataservice.active_wizard=character;
+  this.router.navigateByUrl('/wizard-details');
+  console.log(this.dataservice.active_wizard);
+ // return character;
   }
-
-
-
 }

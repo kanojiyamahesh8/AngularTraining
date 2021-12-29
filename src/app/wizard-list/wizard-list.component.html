@@ -1,16 +1,26 @@
-<p>wizard-list works!</p>
-<P>{{data_of_single_wizard | json}}</P>
+<!-- <p>wizard-list works!</p>
+<P>{{data_of_single_wizard | json}}</P> -->
 <!-- <P>{{data_of_single_wizard | json}}</P>
 <P>{{data_of_single_wizard | json}}</P> -->
 
 <div class="grid-container row">
 <div class="grid-item col-3" *ngFor="let x of data"> 
-    <p>Name:{{ x.name  }} <br>
-     Species:{{ x.species }} <br>
-    <img height="227" width="163" [src]="x.image"> <br>
-    <button (click)="onClick(x)">Details</button>
+    Name:{{ x.name  }} <br>
+    Species:{{ x.species }} <br>
+    <div *ngIf = "x.image else elseblock" >      
+        <img  height="227" width="163" class="character-image" [src]="x?.image">
+    </div>
+            <ng-template #elseblock>
+                <img   height="227" width="163" class="Male" *ngIf="x.gender == 'male'" src="./../../assets/male-profile-avatar-with-brown-hair-vector-12055105.jpg"/>
+<img  height="227" width="163" class="Female" *ngIf="x.gender == 'female'" src="./../../assets/female.png" />
+            </ng-template>
     
+    <!-- <img height="227" width="163" [src]="x.image"> <br> -->
+   <p> <button (click)="onClick(x)" type="button"class="btn btn-primary">Details</button>
+    <!-- <button (click)="onClick(x)">Details</button> -->
     </p>
+
+
 </div>
 </div>
 
@@ -19,7 +29,7 @@
 
  
 
-<button type="button" class="btn btn-primary">Details</button>
+<!-- <button type="button" class="btn btn-primary">Details</button>
 <button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-success">Success</button>
 <button type="button" class="btn btn-danger">Danger</button>
@@ -28,4 +38,4 @@
 <button type="button" class="btn btn-light">Light</button>
 <button type="button" class="btn btn-dark">Dark</button>
 
-<button type="button" class="btn btn-link">Link</button>
+<button type="button" class="btn btn-link">Link</button> -->
