@@ -1,0 +1,25 @@
+<div class="top">
+<div><button (click)="onClickForHome()">Home</button></div>
+<div><button (click)="onClickForBack()">Back</button></div>
+</div>
+<div class="grid-container row">
+    
+    <div class="grid-item col-3" *ngFor="let x of data"> 
+        Name:{{ x.name  }} <br>
+        Species:{{ x.species }} <br>
+        <div *ngIf = "x.image else elseblock" >      
+            <img  height="227" width="163" class="character-image" [src]="x?.image">
+        </div>
+                <ng-template #elseblock>
+                    <img   height="227" width="163" class="Male" *ngIf="x.gender == 'male'" src="./../../assets/male-profile-avatar-with-brown-hair-vector-12055105.jpg"/>
+    <img  height="227" width="163" class="Female" *ngIf="x.gender == 'female'" src="./../../assets/female.png" />
+                </ng-template>
+        
+        <!-- <img height="227" width="163" [src]="x.image"> <br> -->
+       <p> <button (click)="onClick(x)" type="button"class="btn btn-primary">Details</button>
+        <!-- <button (click)="onClick(x)">Details</button> -->
+        </p>
+    
+    
+    </div>
+    </div>

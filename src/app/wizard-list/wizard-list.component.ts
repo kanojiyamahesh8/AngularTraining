@@ -22,10 +22,8 @@ export class WizardListComponent implements OnInit {
        this.data = response 
      } 
     );
+   }
    
-   
-
-}
 
 onClick(character:any) {
   //this.data_of_single_wizard=character;

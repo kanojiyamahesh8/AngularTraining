@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit {
   }
   
   onClickGoBack() {
-    this.router.navigateByUrl('/wizard-list');
+    this.router.navigateByUrl('/house-list');
   }
 
 

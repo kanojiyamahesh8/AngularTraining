@@ -1,4 +1,8 @@
-.home_display{
+.houses_display{
     display: flex;
     justify-content: space-around;
 }
+#top{
+    margin-bottom: 100px;
+}
+
